@@ -397,17 +397,29 @@
             .maps h2 {
                 text-align: center;
             }
+            /* CSS for maps responsiveness */
+            .maps {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
 
-            .maps-iframe {
+            .map-iframe {
                 display: flex;
-                justify-content: space-between;
-                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .map-iframe iframe {
+                width: 100%; /* Ensures the map iframe fills its container */
+                height: 300px; /* Adjust height as per your design */
+                border: none; /* Removes default iframe border */
             }
 
             .icons {
                 flex-direction: row;
                 width: 50%;
-            }
+            }          
         }
 
         .video-scroll-container {
@@ -477,6 +489,16 @@
             .icons {
                 flex-direction: row;
                 width: 70%;
+            }
+            .map-iframe {
+                display: flex; /* Change from flex to block for stacking on smaller screens */
+                flex-direction: column;
+            }
+
+            .map-iframe iframe {
+                width: 100%; /* Make iframe full width */
+                height: 200px; /* Adjust height as per your design */
+                margin-bottom: 20px;
             }
         }
 
