@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Hope Church</title>
+    <link rel="stylesheet" href="news.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .logo a img {
+            width: 89px;
+            height: 96px;
+            border-radius: 20px;
+            margin: 15px;
+            z-index: -1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: double;
+            font-size: large;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .btn-class button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-class button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .intro {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .intro img {
+            width: 100%;
+            height: 85vh;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .intro h1 {
+            color: #fff;
+            font-size: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px 0px 10px 0px;
+            text-align: center;
+        }
+
+        .about-pastor {
+            display: flex;
+            justify-content: space-around;
+            color: rgb(255, 255, 255);
+            background-color: black;
+            margin-bottom: 10px;
+        }
+
+        .about-pastor h4 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .about-pastor p {
+            margin-bottom: 20px;
+        }
+
+        .pastor-image {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pastor-data {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+
+        .pastor-data h2 {
+            display: block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .pastor-data h4 {
+            display: block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .pastor-image img {
+            width: 500px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 20px;
+            transform: scaleX(-1);
+            overflow: hidden;
+        }
+
+        .our-videos h2 {
+            display: block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* CSS for Videos Section */
+        #videos {
+            background-color: #f0f0f0;
+            padding: 2em 0;
+            /* Adjust padding as needed */
+        }
+
+        .our-videos {
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 0 2em;
+            /* Adjust padding as needed */
+        }
+
+        .video-scroll-container {
+            display: flex;
+            gap: 1em;
+            padding-bottom: 1em;
+            /* Ensure the container takes full width */
+            width: 100vw;
+            /* Ensure horizontal scrolling */
+            overflow-x: auto;
+        }
+
+        .videos {
+            display: flex;
+            gap: 1em;
+        }
+
+        .short {
+            /* Ensure each video container is the same width */
+            flex: 0 0 70%;
+            /* Adjust width as needed */
+            max-width: 300px;
+            /* Adjust max-width as needed */
+        }
+
+        .short iframe {
+            width: 100%;
+            height: 200px;
+            /* Adjust height as needed */
+            border: none;
+            border-radius: 8px;
+            /* Optional: add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Optional: add shadow */
+        }
+
+
+        .short iframe {
+            width: 100%;
+            height: 500px;
+        }
+
+        .timings {
+            text-align: center;
+            margin: 40px;
+        }
+
+        .timings h2 {
+            display: block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .maps h2 {
+            text-align: center;
+
+        }
+
+        .map-iframe {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 20px 0px;
+            padding: 0px 0px 20px 0px;
+        }
+
+        .first-src {
+            display: inline-block;
+        }
+
+        .second-src {
+            display: inline-block;
+        }
+
+        .first-src p {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .second-src p {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #src-iframe iframe {
+            width: 500px;
+            height: 350px;
+        }
+
+        footer h2 {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .social-icons img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            color: rgb(255, 255, 255);
+            width: 10%;
+            align-items: center;
+            margin: 10px auto;
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 1200px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                overflow: auto;
+                background-color: rgb(255, 255, 255);
+                position: absolute;
+                top: 120px;
+                left: 0;
+                z-index: 1;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                width: 50px;
+                cursor: pointer;
+                padding-right: 10px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .btn-class {
+                display: none;
+            }
+
+            .line1,
+            .line2,
+            .line3 {
+                width: 100%;
+                height: 3px;
+                background-color: black;
+                margin: 5px;
+            }
+
+            .intro img {
+                height: 50vh;
+            }
+
+            .intro h1 {
+                font-size: 40px;
+                top: 10%;
+            }
+
+            .about-pastor {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pastor-image img {
+                width: 80%;
+            }
+
+            #src-iframe iframe {
+                width: 120%;
+                height: 200px;
+            }
+
+            .video-scroll-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                margin: 20px 0;
+            }
+
+            .videos {
+                display: flex;
+            }
+
+            .short {
+                min-width: 300px;
+                /* Adjust as needed */
+                margin-right: 10px;
+            }
+
+            .maps h2 {
+                text-align: center;
+            }
+
+            .maps-iframe {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+            }
+
+            .icons {
+                flex-direction: row;
+                width: 50%;
+            }
+        }
+
+        .video-scroll-container {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .video-scroll-container::-webkit-scrollbar {
+            width: 0px;
+            /* Remove the vertical scrollbar */
+            height: 0px;
+            /* Remove the horizontal scrollbar */
+        }
+
+        .video-scroll-container::-webkit-scrollbar-thumb {
+            background: transparent;
+            /* Optional: Hide scrollbar thumb */
+        }
+
+
+        @media (max-width: 992px) {
+            .intro img {
+                height: 40vh;
+            }
+
+            .intro h1 {
+                font-size: 30px;
+                top: 10%;
+            }
+
+            .pastor-image img {
+                width: 70%;
+            }
+
+            .videos iframe {
+                width: 90%;
+                height: 300px;
+            }
+
+            .icons {
+                flex-direction: row;
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .intro img {
+                height: 35vh;
+            }
+
+            .intro h1 {
+                font-size: 25px;
+                top: 10%;
+            }
+
+            .pastor-image img {
+                width: 60%;
+            }
+
+            .videos iframe {
+                width: 100%;
+                height: 250px;
+            }
+
+            .icons {
+                flex-direction: row;
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .intro img {
+                height: 30vh;
+            }
+
+            .intro h1 {
+                font-size: 20px;
+                top: 10%;
+            }
+
+            .pastor-image img {
+                width: 50%;
+            }
+
+            .videos iframe {
+                width: 100%;
+                height: 200px;
+            }
+
+            .icons {
+                flex-direction: row;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="https://i.ibb.co/LnBKxzd/lhclogo.jpg" alt=""></a>
+        </div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Watch</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="btn-class">
+            <button class="button">Watch</button>
+            <button class="button">Give Now</button>
+            <button class="button">Prayer Request</button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="intro">
+                <img src="./lhcbackground.jpg" alt="church">
+                <h1>Welcome To Living Hope Church</h1>
+            </div>
+            <div class="about-pastor">
+                <div class="pastor-image">
+                    <img src="https://i.ibb.co/ckrNtMH/anil.jpg" alt="Pastor Anil Andrewz" />
+                </div>
+                <div class="pastor-data">
+                    <h2>About Pastor Anil Andrewz</h2>
+                    <h4>Early Life and Calling</h4>
+                    <p>Pastor Anil Andrewz is the founder of the Anil Andrewz Trust. He accepted the Lord as his
+                        personal Savior and was baptized on January 7th, 2001. Since then, he has been serving the Lord
+                        by preaching God's word through many organizations.</p>
+                    <h4>Full-Time Ministry</h4>
+                    <p>In 2012, while praying for a full-time ministry, he clearly heard God's voice saying, "Search and
+                        bring back my lost sheep." Obeying this call, he dedicated his life to full-time ministry. Since
+                        then, without compromise, he has been preaching the Gospel and God's word to strengthen many
+                        souls spiritually.</p>
+                    <h4>Rural Outreach and Church Planting</h4>
+                    <p>Following a vision from the Lord in 2019, Pastor Anil visited many rural villages and discovered
+                        that these areas lacked proper churches and pastors. With a burdened heart, he started
+                        encouraging pastors and became actively involved in church planting. His ministry also includes
+                        training youth as Sunday school teachers to ensure that children in these areas are saved.</p>
+                    <h4>Personal Life</h4>
+                    <p>According to God's will, he married Selvin Nissi on January 7th, 2020. Together, they are working
+                        in God's vineyard.</p>
+                </div>
+            </div>
+        </section>
+        <section class="timings">
+            <h2>Church Timings</h2>
+            <table>
+                <tr>
+                    <th>Services</th>
+                    <th>Day</th>
+                    <th>Timings</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>Morning Worship Service</td>
+                    <td>Sunday</td>
+                    <td>09:30 AM - 12:30 PM</td>
+                    <td><a href="https://g.co/kgs/Wt226gg">
+                            Jeevan Jyothi Retreat House,<br>
+                            1-10-71/1, Old Patigadda, Chikoti Gardens, Begumpet,<br>
+                            Hyderabad, Telangana 500016
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>Evening Worship Service</td>
+                    <td>Sunday</td>
+                    <td>06:00 PM - 08:00 PM</td>
+                    <td><a href="https://g.co/kgs/FTBAXpQ">
+                            Jigyaasa Studio<br>
+                            7-1-80/2 Ameerpet Road Lane, adjacent Ratnadeep Supermarket,<br>
+                            Hyderabad Telangana 500016
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>Bible Study</td>
+                    <td>Thursday</td>
+                    <td>09:00 PM - 10:00 PM</td>
+                    <td><a
+                            href="https://us06web.zoom.us/j/9988416860?pwd=aUpYenlkZTFQRW1JOHBXcHlFelU5QT09&omn=86818567116">
+                            Zoom Link <br>
+                            Meeting ID: 998 841 6860 <br>
+                            Passcode: 12345
+                        </a></td>
+                </tr>
+                <tr>
+                    <td>Fasting Prayer</td>
+                    <td>Second Saturday</td>
+                    <td>10:00 AM - 01:00 PM</td>
+                    <td><a href="https://g.co/kgs/Wt226gg">
+                            Jeevan Jyothi Retreat House,<br>
+                            1-10-71/1, Old Patigadda, Chikoti Gardens, Begumpet,<br>
+                            Hyderabad, Telangana 500016
+                        </a></td>
+                </tr>
+            </table>
+        </section>
+        <section id="videos">
+            <div class="our-videos">
+                <h2>Our Videos</h2>
+                <div class="video-scroll-container" id="video-scroll-container">
+                    <div class="videos">
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/_DVqmWSFzx0"
+                                title="Do you have pride and ego? #anilandrewz #shorts #christianshorts" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/51ryfSWx3hA"
+                                title="Listening Mind విను బుద్ధి #anilandrewz #shorts #christianshorts" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/8K-S5McyzK8"
+                                title="How do you use mobile? మొబైల్ ఎలా వాడుతున్నారు ? #anilandrewz #shorts #christianshorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/rnW9NtBPbNc"
+                                title="రేపటి గురించి చింతించకు | Do not Worry about Tomorrow | #Shorts | Pas. Anil Andrewz"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/JyjZsphTfUI"
+                                title="Living Hope Church, Hyderabad" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/S655WS5Lrpg"
+                                title="Don&#39;t Fight #anilandrewz #shorts #christianshorts" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/FSWlPk_LWrA"
+                                title="Nothing is too hard for Jesus #anilandrewz #shorts #christianshorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/8rZUW5t2wGk"
+                                title="దేశం కోసం ప్రార్ధిస్తారు కానీ ప్రక్కవారి కోసం ప్రార్ధన చేయలేరు | Prayer | #Shorts #anilandrewz"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/VbuxIJDWRzA"
+                                title="నీవు చర్చికి వెళ్తున్నావా? | Are you going to Church? | #Shorts |  #anilandrewz"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/Lv_l00N6v7k"
+                                title="ఒంటరితనంలో ఉన్నావా? | 7 Bible Verses When you&#39;re feeling Lonely | #Shorts |  #anilandrewz"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/cPva1NmEgXY"
+                                title="నిరాశ చెందుకు నిరీక్షణ కలిగియుండు | Don&#39;t Despair Have Hope | #Shorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/ElMo7suxeUQ"
+                                title="దేవుని కొరకే పని చెయ్యు | Work for God |  #anilandrewz #livinghopechurch #shorts #christianshorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/56IfRRYMGdE"
+                                title="Always Trust in God | Telugu Christian Shorts |  #anilandrewz #livinghopechurch #shorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/56IfRRYMGdE"
+                                title="Always Trust in God | Telugu Christian Shorts |  #anilandrewz #livinghopechurch #shorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/y_iNlGh_XGU"
+                                title="New Addiction | Telugu Christian Shorts | Living Hope Church, Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/U6NsMAJ_1B4"
+                                title="Don&#39;t use Mobile in Church | Telugu Christian Shorts | Living Hope Church, Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/YlU2Idc3Bew"
+                                title="Don&#39;t Neglect The Word of God | Telugu Christian Shorts | Living Hope Church, Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/ZGDdEQk8v-I"
+                                title="God made You | Isa 44:2,24; 49:5 | Telugu Christian Shorts | Living Hope Church Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/zySQxN23X9U"
+                                title="Victory Over Everything | Rom 8:35-37 | Telugu Christian Shorts | Living Hope Church Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/X8wP_ikd70I"
+                                title="Don&#39;t shout, just Pray | Telugu Christian Shorts | Living Hope Church Hyderabad"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/Xof6vm2eLGs"
+                                title="#shorts #livinghopechurch, Hyderabad" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/M8sd23RqFLY"
+                                title="Living Hope Church, Hyderabad" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="short">
+                            <iframe src="https://www.youtube.com/embed/FBQGxQcEySI"
+                                title="Living Hope Church, Hyderabad" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="maps">
+                <h2>Location</h2>
+                <div class="map-iframe">
+                    <div class="first-src" id="src-iframe">
+                        <p>First Service Location</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3701499828812!2d78.46230927358633!3d17.441989001232987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918930e7a86f%3A0xf73f00647a5dcafb!2z4LCc4LGA4LC14LCo4LGNIOCwnOCxjeCwr-Cxi-CwpOCwvyDgsLDgsL_gsJ_gsY3gsLDgsYDgsJ_gsY0g4LC54LGM4LC44LGN!5e0!3m2!1ste!2sin!4v1718453313174!5m2!1ste!2sin"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="second-src" id="src-iframe">
+                        <p>Second Service Location</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5058616518445!2d78.4468312735862!3d17.43548590142087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c8f77ded69%3A0x86409d35be15ce57!2sJigyaasa%20Studio!5e0!3m2!1ste!2sin!4v1718453394606!5m2!1ste!2sin"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Living Hope Church. All rights reserved.</p>
+        <h2>Subscribe to our social media</h2>
+        <div class="icons">
+            <a href="https://www.youtube.com/@anilandrewz" target="_blank"><img
+                    src="https://i.ibb.co/0QZnxGR/youtube.png" alt="YouTube"></a>
+            <a href="https://www.facebook.com/anil.andrewz?mibextid=ZbWKwL" target="_blank"><img
+                    src="https://i.ibb.co/g3J664x/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/anilandrewz?igsh=MTVnY3YxamkzaW9wdg==" target="_blank"><img
+                    src="https://i.ibb.co/Vg7Gg5M/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            const videoContainers = document.querySelectorAll('.short iframe');
+
+            // videoContainers.forEach(video => {
+            //     video.addEventListener('play', () => {
+            //         stopAutoScroll();
+            //     });
+
+            //     video.addEventListener('pause', () => {
+            //         startAutoScroll();
+            //     });
+            // });
+
+            // let autoScrollInterval;
+
+            // function startAutoScroll() {
+            //     autoScrollInterval = setInterval(scrollVideos, 5000); // Adjust interval as needed
+            // }
+
+            // function stopAutoScroll() {
+            //     clearInterval(autoScrollInterval);
+            // }
+
+            // function scrollVideos() {
+            //     const videoScrollContainer = document.querySelector('.video-scroll-container');
+            //     const scrollAmount = 300; // Adjust scroll amount as needed
+            //     const maxScrollLeft = videoScrollContainer.scrollWidth - videoScrollContainer.clientWidth;
+
+            //     if (videoScrollContainer.scrollLeft + videoScrollContainer.clientWidth >= maxScrollLeft) {
+            //         videoScrollContainer.scrollTo({
+            //             left: 0,
+            //             behavior: 'smooth'
+            //         });
+            //     } else {
+            //         videoScrollContainer.scrollBy({
+            //             left: scrollAmount,
+            //             behavior: 'smooth'
+            //         });
+            //     }
+            // }
+
+            // Start auto-scrolling initially
+            //startAutoScroll();
+
+        });
+    </script>
+</body>
+
+</html>

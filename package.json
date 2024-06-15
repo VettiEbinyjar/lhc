@@ -1,0 +1,12 @@
+{
+  "name": "livinghopechurch",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
